@@ -1,0 +1,218 @@
+<!-- TRYING TO GET PARTICLES TO WORK --> 
+
+
+<html> 
+	<head> 
+		<title> WaterHub Data Challenge</title>
+		<link rel="stylesheet" type="text/css" href="css/pls.css">
+		<link rel="stylesheet" type="text/css" href="theme.css">
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script> 
+		<!-- INSERT DOWNLOADED JQUERY FILES --> 
+		<script src="jquery.js"> </script> 
+		<script src="parsley.js"> </script> 
+		<script src="jquery.particleground.min.js"></script>
+		<script src="bootstrap.min.js"> </script> 
+       
+	</head> 
+
+
+	<body> 
+		<div id="particles"> 
+			<div id="content"> 
+	
+
+
+				<!-- HEADER --> 
+
+				<!-- Introduction --> 
+				<div id="intro">
+					
+					<h1 class="inline"> WatrHub Data Challenge <h1>
+				
+					<p> Do you think you have what it takes to conquer the water industry? Take the test and find out! </p>
+
+				</div> <!-- intro--> 
+
+
+	<!-- FORM INFORMATION: REQUIRED: First name, last name, company, email address, must answer the questions --> 
+ 
+				<form action="/game/submit_info" id="submit" method="POST" data-parsley-validate>
+					 <div id="headcont" style="width=100%">
+						<div id="formstuff" style="margin-left: -225px">
+						
+								<div class="form-group"> 
+									
+										
+											<label for="usr">First Name *:</label>
+										
+
+											<input type="text" class="form-control small left" id="fuser" style="width: 300px;" name="firstname" data-parsley-trigger="change" required>
+										
+									
+								</div>
+							
+							
+								<div class="form-group"> 
+									
+											<label for="usr">Last Name *:</label>
+										
+
+										
+											<input type="text" class="form-control small left" id="userLastName" style="width: 300px;" name="lastname" data-parsley-trigger="change" required>
+										
+								</div>
+						 
+							
+					 
+
+							<div class="form-group">
+								
+										<label for="pwd">Phone Number:</label>
+									
+									 
+										<input parsley-type="phone" class="form-control small left" id="phonenumber"  style="width: 300px;" name="phone">
+									
+							</div> 
+
+							<div class="form-group">
+								
+										<label for="email"> E-Mail Address *:</label>
+								
+								
+									
+										<input type="email" class="form-control small left" id="email"  style="width: 300px;" name="email"  data-parsley-trigger="change" required> 
+								
+							</div> 
+
+							<div class="form-group">
+								
+										<label for="company">Company *:</label>
+									
+
+									
+										<input type="text" class="form-control small left" id="company"  style="width: 300px;" name="company" data-parsley-trigger="change" required>
+									
+							</div> 
+
+							<div class="form-group">
+							
+										<label for="role">Role:</label>
+								
+
+										<input type="text" class="form-control small left" id="role" style="width: 300px;" name="role">
+									
+							</div> 
+
+							<div class="form-group">
+								<ul> 
+									<li class="inline" > 
+							
+									<label for="role" style="margin-left: -40px">Did you hear about WatrHub before WEFTEC? *:</label>
+								</li> 
+
+								<li class="inline" style="margin-left: -40px; ">
+									
+									<div class="left">
+									<ul style="list-style: none">
+										<li> <input type="radio" name="hear" value="yes"  required> Yes <br> </li> 
+										<li> <input type="radio" name="hear" value="no"  required> No <br> </li> 
+										<li> <input type="radio" name="hear" value="idk" required> Don't Remember <br> </li> 
+									</ul> 
+
+								</div></li>
+							</ul> 
+								 
+							
+							</div> 
+
+							<div class="form-group">
+								<ul> 
+									<li class="inline"> 
+										<label for="role" style="margin-left: -40px;   ">I am interested in getting updates from WatrHub:</label>
+									</li> 
+
+									<li class="inline">
+										<input type="checkbox" class="form-control small inline" id="updates"  style="width: 30px; " name="updates" checked>
+									</li> 
+								</ul> 
+							</div>
+
+						</div>   <!-- END OF FORM ELEMENTS --> 
+
+
+						<p style="color: white; width: 300px; text-align: center; margin-left: -55px; "> Don't worry! We won't share any of your data! </p> 
+						<!-- Sunit (change content inside of p tag--> 
+						<input type="submit" value="Submit and Play!" id="submitbtn" onclick="plsWork()">
+
+						<div style="margin-top: 30px; margin-left: 30px; "> 
+							<a href="leader.html" target="_blank" id="leaderBtn"> Check out the Leaderboard! </a>
+						</div>  
+
+						<script> 
+						function plsWork(){
+							var input= document.getElementById("fuser");
+							var firstChar = $('#fuser').val().substr(0,1); 
+							console.log(firstChar);
+							localStorage.setItem("name", firstChar);
+
+							var lName = document.getElementById("userLastName");
+							var fullLastName = $('#userLastName').val();
+							console.log(fullLastName);
+							localStorage.setItem("lastName", lName.value);
+
+							console.log("Full Name is " + firstChar + " " + fullLastName); 
+
+						}
+
+						
+						</script>
+					</div>  <!-- HEADER DIV --> 
+				</form>
+
+
+
+			</div> 
+		</div> 
+
+
+
+
+
+
+<!-- PARTICLES --> 
+		<script> 
+			$(document).ready(function() {
+$('#particles').particleground({
+  minSpeedX: 0.1,
+  maxSpeedX: 0.7,
+  minSpeedY: 0.1,
+  maxSpeedY: 0.7,
+  directionX: 'center', // 'center', 'left' or 'right'. 'center' = dots bounce off edges
+  directionY: 'center', // 'center', 'up' or 'down'. 'center' = dots bounce off edges
+  density: 10000, // How many particles will be generated: one particle every n pixels
+  dotColor: '#666666',
+  lineColor: '#666666',
+  particleRadius: 7, // Dot size
+  lineWidth: 1,
+  curvedLines: false,
+  proximity: 100, // How close two dots need to be before they join
+  parallax: false,
+  parallaxMultiplier: 5, // The lower the number, the more extreme the parallax effect
+  onInit: function() {},
+  onDestroy: function() {}
+});
+});
+
+</script> 
+
+
+<!-- END OF PARTICLES --> 
+
+	
+
+	</body> 
+
+</html> 

@@ -1,0 +1,139 @@
+<!-- TRYING TO GET PARTICLES TO WORK --> 
+
+
+<html> 
+	<head> 
+		<title> Leaderboard </title>
+		<link rel="stylesheet" type="text/css" href="css/pls.css">
+		<link rel="stylesheet" type="text/css" href="theme.css">
+		<link rel="stylesheet" type="text/css" href="css/animate.css">
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script> 
+		<!-- INSERT DOWNLOADED JQUERY FILES --> 
+		<script src="jquery.js"> </script>
+		<script src="jquery.particleground.min.js"></script>
+		<script src="bootstrap.min.js"> </script> 
+       
+	</head> 
+
+
+	<body> 
+		<div id="particles"> 
+			<div id="content"> 
+
+<!-- HEADER --> 
+<div id="leaderhead"> 
+	<h1 style="color: white; text-align: center; font: Roboto; "> <b> WATRHUB DATA CHALLENGE LEADERBOARD  </b> </h1> 
+	<p style="color: white; text-align: center; font: Roboto; font-size: 1.5em;"> Prizes Awarded Daily! Do You Have What It Takes? </p> 
+</div> 
+<!-- FINISH HEADER --> 
+	
+
+<!-- TABLE --> 
+
+		<!--<table id="board" style="width:80%"> 
+			<tbody> 
+				<tr class="staticRow"> 
+					<td> <div> Name </div>  </td>
+					<td> Questions Under Par </td> 
+					<td> Putting Strokes </td>
+					<td> Total Score </td>
+				</tr>
+			</tbody>  
+
+		</table> -->
+
+		<table id="title" style"width: 75%; margin-bottom: -100px;"> 
+			<tbody>
+
+				<tr style="border-radius: 200px;"> 
+				
+					<td style="text-align: left; width: 50%"> <b>THE WATRHUB DATA CHAMPIONS </b></td>
+					
+				</tr>
+			</tbody>
+		</table>
+
+		<table id="testing" style"width: 75%; margin-top: -120px;"> 
+			<tbody>
+
+				<tr> 
+				
+					<td style="text-align: left; width: 50% "> LEADER </td>
+					<td style=" width: 10%"> QUESTIONS  </td> 
+					<td style=" width: 10%"> STROKES </td>
+					<td style=" width: 10%"> TOTAL </td> 
+				</tr>
+			</tbody>
+		</table>
+
+
+
+
+
+			</div> <!-- DONT TOUCH ME --> 
+		</div> 
+
+
+
+
+
+
+<!-- PARTICLES --> 
+		<script> 
+			$(document).ready(function() {
+				$.get('/get_highscores', function(data) {
+					for (var i = 0; i < data.results.length; i++) {
+						var row = data.results[i];
+						row['name'] == row.name
+						//if (row.name == undefined) {
+						//	row.name = "
+						//}
+
+						$("#testing").append("<tr class=\"dynRow animated flipInX\">" +  
+							//Sunit (can change the animation by changing 'flipInX')
+
+								"<td>" + row['displayName'].toUpperCase() + "</td>" +
+								"<td>" + row['score'] * -1 + "</td> " +
+								"<td>" + row.gscore + "</td>" + //need to add gscore
+								"<td>" + row.totalScore + "</td>" + // need to add totalscore
+
+							"</tr> "); 
+						// make things centered 
+						//add colours 
+						// add images 
+					}
+				});
+$('#particles').particleground({
+  minSpeedX: 0.1,
+  maxSpeedX: 0.7,
+  minSpeedY: 0.1,
+  maxSpeedY: 0.7,
+  directionX: 'center', // 'center', 'left' or 'right'. 'center' = dots bounce off edges
+  directionY: 'center', // 'center', 'up' or 'down'. 'center' = dots bounce off edges
+  density: 10000, // How many particles will be generated: one particle every n pixels
+  dotColor: '#666666',
+  lineColor: '#666666',
+  particleRadius: 7, // Dot size
+  lineWidth: 1,
+  curvedLines: false,
+  proximity: 100, // How close two dots need to be before they join
+  parallax: false,
+  parallaxMultiplier: 5, // The lower the number, the more extreme the parallax effect
+  onInit: function() {},
+  onDestroy: function() {}
+});
+});
+
+</script> 
+
+
+<!-- END OF PARTICLES --> 
+
+	
+
+	</body> 
+
+</html> 

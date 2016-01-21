@@ -1,0 +1,290 @@
+<html> 
+	<head> 
+		<title> WaterHub Data Challenge</title>
+		<link rel="stylesheet" type="text/css" href="css/pls.css">
+		<link rel="stylesheet" type="text/css" href="css/animate.css">
+		<link rel="stylesheet" type="text/css" href="bootstrap-theme.css">
+		<link href="bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="bootstrap-theme.min.css" rel="stylesheet" media="screen"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script> 
+		<!-- INSERT DOWNLOADED JQUERY FILES --> 
+		<script src="jquery.js"> </script>
+		<script src="jquery-ui.js"> </script>
+		<script src="jquery.particleground.min.js"></script>
+		<script src="bootstrap.js"> </script> 
+		
+       
+	</head> 
+
+
+	<body> 
+		<div id="particles"> 
+			<div id="content"> 
+
+<!-- DIFFERENT SCREENS --> 
+
+
+<div class="screenStyles" id="pauseScreen"></div> 
+
+
+<!--beginning of all content --> 
+
+<!-- HEADER -->
+		<div id="gameheader">
+		
+			<h1 style="width: 75%;"> The WatrHub Data Challenge </h1> 
+			<h2 id="usersname"> User's Name </h2>
+		</div> <!-- game header --> 
+
+		<!-- END OF HEADER --> 
+
+
+
+		<!-- QUESTION AND OPTIONS --> 
+		<div id="qanda"> 
+			<h1 id="question">  </h1> 	
+
+			<div id="answers">
+				<ul style="width: 1200px; margin-left: auto; margin-right: auto"> 
+				     <button class="questionblock"> <li id="answer1"> Answer 1 </li> </button>
+					 <button class="questionblock"> <li id="answer2"> Answer 2 </li> </button>
+				</ul>
+
+				<ul style="width: 1200px; margin-left: auto; margin-right: auto"> 
+					 <button  class="questionblock"> <li id="answer3"> Answer 1 </li> </button> 
+					 <button class="questionblock"> <li id="answer4" > Answer 2 </li> </button> 
+				</ul>  
+			</div>  <!-- #answers -->
+		</div> <!-- qanda --> 
+
+		<!-- END OF QUESTIONS AND OPTIONS -->
+
+
+
+
+<!-- MODAL BOXES THAT WE NEED: Correct (move onto next question), congrats (6/6, input gold score), incorrect (input golf score), Ran out of time (input golf score), Pause (block question), manual exit (are you sure you want to exit the game? Input golf score) --> 
+
+<!-- CORRECT: MOVE TO NEXT QUESTION -->
+
+<div class="modalStyle"> 
+	<div id="correctModal"> 
+		<h1> CORRECT! </h1>
+		<p style="colour: white"> You got the correct answer! Good job! </p>
+		<h2 class="correctLetter" style="color: white">  <h2>
+		<p class="additionalInfo">  </p>
+
+		<p> Your Score: <p id="userScore">  </p>  </p> 
+		
+
+		
+			<ul id="stars" style="margin-left: -100px;"> 
+				
+				</ul>
+		
+				<br> 
+			<a href='#' onclick='openCorrectModal(); determineScore(); '>
+			<img src="nextIconWhite.png" onmouseover="this.src='nextIconOrange.png'" onmouseout="this.src='nextIconWhite.png'" style="height: 35px; width: 35px; margin-top: 25px ">
+		</a>
+		<p> Click above to submit your score! </p> 
+	</div> 
+</div> 
+<!-- RULES MODAL --> 
+<!-- Sunit --> 
+
+
+<div class="modalStyle"> 
+	<div id="rulesModal"> 
+		<h1> ARE YOU READY? </h1>
+		<p> Here are some rules! Get ready to conquer the water data industry! </p>
+		<p> Rules: </p> 
+		<ol> 
+			<li> See the question </li>
+			<li> You must try to get 6/6 </li>
+			<li> You will loose the game if you run out of time, or get a question wrong </li>
+			<li> Thats when you get to play golf </li>
+			<li> Your score will determine the amount of obstacles you remove</li>
+			<li> Leaderboard! </li> 
+			<li> Wait 3 seconds before the game to redirect back to the form page </li>
+		</ol>
+				<br> 
+			<p> Click the button below whenever you are ready! </p> 
+			<input type="submit" value="Submit and Play!" id="submitbtn" onclick=" openRulesModal();loadQuestion(getUniqueRandom(test)); startTimer(20, $('#time')); ">
+			//onlick start the game, timer and load a new question 
+	</div> 
+</div> 
+
+<!-- END OF RULES MODAL --> 
+<!-- CONGRATS! WINNER! --> 
+
+<div class="modalStyle"> 
+	<div id="congratsModal"> 
+		<h1> CONGRATS! </h1>
+		<p> You won the game! You are a data champion! </p>
+		<h2 class="correctLetter" style="color: white">  <h2>
+		<p class="additionalInfo">  </p>
+		<p> Your Score: <p id="userScoreCongrats">  </p>  </p> 
+		<ul id="stars"> 
+					<li  style="width:25px"> <img src="star.png" class="small"></li>
+					<li  style="width:25px"> <img src="star.png" class="small"></li>
+					<li  style="width:25px"> <img src="star.png" class="small"></li>
+					<li  style="width:25px"> <img src="star.png" class="small"></li>
+					<li  style="width:25px"> <img src="star.png" class="small"></li>
+					<li  style="width:25px"> <img src="star.png" class="small"></li> 
+				</ul>
+				<br> 
+
+		<p id="inputText"> Input your golf score here:  </p> 
+		<br>
+			<input type="text" class="form-control small gScore"   style="width: 100px; margin-right: auto; margin-left: auto;" name="gScore">
+		<br> 
+
+		<a href='#' onclick='openIncorrectModal(); gameDone();'>
+			<img src="nextIconWhite.png" onmouseover="this.src='nextIconOrange.png'" onmouseout="this.src='nextIconWhite.png'" style="height: 35px; width: 35px; ">
+		</a>
+		<br>
+		<p> Click above to submit your score! </p> 
+			
+	</div> 
+</div> 
+
+<!-- INCORRECT ANSWER --> 
+
+<div class="modalStyle"> 
+	<div id="incorrectModal"> 
+		<h1> GAME OVER </h1>
+		<p> Oh no! You got the wrong answer. Here is the correct answer: </p>
+		<h2 class="correctLetter" style="color: white">  <h2>
+		<p class="additionalInfo">  </p>
+		<p> Your Score: <p id="userScoreIncorrect">  </p>  </p> 
+
+		<p id="inputText"> Input your golf score here:  </p> 
+		<br> 
+		<input type="text" class="form-control small gScore"   style="width: 100px; margin-right: auto; margin-left: auto;" name="gScore">
+		<br> 
+
+		<a href='#' onclick='openIncorrectModal(); gameDone();'>
+			<img src="nextIconWhite.png" onmouseover="this.src='nextIconOrange.png'" onmouseout="this.src='nextIconWhite.png'" style="height: 35px; width: 35px; ">
+		</a>
+		<br>
+		<p> Click above to submit your score! </p> 
+
+	</div> 
+</div> 
+
+<!-- RAN OUT OF TIME --> 
+
+<div class="modalStyle"> 
+	<div id="timeModal"> 
+		<h1> GAME OVER </h1>
+		<p> You ran out of time! </p>
+		<h2 class="correctLetter" style="color: white"> A <h2>
+		<p class="additionalInfo">  </p>
+		<p> Your Score: <p id="userScoreTime">  </p>  </p> 
+
+		<p id="inputText"> Input your golf score here: </p> 
+		<br>
+	<input type="text" class="form-control small gScore"   style="width: 100px; margin-right: auto; margin-left: auto;" name="gScore">
+		<br> 
+
+		<a href='#' onclick='openIncorrectModal(); gameDone();'>
+			<img src="nextIconWhite.png" onmouseover="this.src='nextIconOrange.png'" onmouseout="this.src='nextIconWhite.png'" style="height: 35px; width: 35px; ">
+		</a>
+		<br>
+		<p> Click above to submit your score! </p> 
+	
+	</div> 
+</div> 
+
+<!-- PAUSE --> 
+
+<div class="modalStylePause"> 
+	<div id="pauseModal"> 
+		<h1> PAUSE </h1>
+		Click here to [<a href='#' onclick='openPauseModal(); ridPauseScreen();'> go back to the game </a>]
+	</div> 
+</div> 
+
+<!-- MANUAL EXIT --> 
+
+<div class="modalStyle"> 
+	<div id="exitModal"> 
+		<h1> Are You Sure? </h1>
+		
+		Click here to [<a href='#' onclick='openExitModal(); ridExitScreen(); gameDone();'> Yes I want to leave! </a>]
+	
+	</div> 
+</div> 
+
+
+
+
+
+
+
+
+
+
+		<!-- MORE OPTIONS -->
+
+
+		<ul id="footoptions"> 
+			<li> <button onclick="openExitModal()" id="exitButton"> EXIT </button> </li> 
+			<li id="time">  </li> 
+			
+			<li>
+				<div id="starsTog">
+					<ul id="stars"> 
+						<!-- STARS -->
+					</ul>
+				</div> 
+			 </li> 
+		</ul>
+
+		<!-- END OF MORE OPTIONS --> 
+<!-- end of all content --> 
+
+
+			</div> 
+		</div> 
+
+
+
+
+
+
+<!-- PARTICLES --> 
+		<script> 
+			$(document).ready(function() {
+$('#particles').particleground({
+  minSpeedX: 0.1,
+  maxSpeedX: 0.7,
+  minSpeedY: 0.1,
+  maxSpeedY: 0.7,
+  directionX: 'center', // 'center', 'left' or 'right'. 'center' = dots bounce off edges
+  directionY: 'center', // 'center', 'up' or 'down'. 'center' = dots bounce off edges
+  density: 10000, // How many particles will be generated: one particle every n pixels
+  dotColor: '#666666',
+  lineColor: '#666666',
+  particleRadius: 7, // Dot size
+  lineWidth: 1,
+  curvedLines: false,
+  proximity: 100, // How close two dots need to be before they join
+  parallax: false,
+  parallaxMultiplier: 5, // The lower the number, the more extreme the parallax effect
+  onInit: function() {},
+  onDestroy: function() {}
+});
+});
+
+</script> 
+<script type="text/javascript" src="javascript/newscript.js"></script>
+
+
+<!-- END OF PARTICLES --> 
+
+	
+
+	</body> 
+
+</html> 

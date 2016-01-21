@@ -1,0 +1,814 @@
+/* FONTS */
+
+@font-face {
+	font-family: Raleway;
+	src: url(fonts/Raleway-Bold.ttf);
+}
+
+@font-face {
+	font-family: RalewayMedium;
+	src: url(fonts/Raleway-Medium.ttf);
+}
+
+@font-face {
+	font-family: RalewayRegular;
+	src: url(fonts/Raleway-Regular.ttf);
+}
+
+@font-face {
+	font-family: Helvetica;
+	src: url(fonts/Helvetica.ttf);
+}
+
+@font-face {
+	font-family: HelveticaBold;
+	src: url(fonts/HelveticaNeueBold.ttf);
+}
+
+@font-face {
+	font-family: HelveticaCBold;
+	src: url(fonts/HelveticaNeueCondensedBold.ttf);
+}
+
+@font-face {
+	font-family: HelveticaLight;
+	src: url(fonts/HelveticaNeuLight.ttf);
+}
+
+@font-face {
+	font-family: HelveticaUltraLight;
+	src: url(fonts/HelveticaNeuUltraLight.ttf);
+}
+
+@font-face {
+	font-family: RobotoBold;
+	src: url(fonts/RobotoSlab-Bold.ttf);
+}
+
+@font-face {
+	font-family: RobotoLight;
+	src: url(fonts/RobotoSlab-Light.ttf);
+}
+
+@font-face {
+	font-family: RobotoRegular;
+	src: url(fonts/RobotoSlab-Regular.ttf);
+}
+
+@font-face {
+	font-family: RobotoThin;
+	src: url(fonts/RobotoSlab-Thin.ttf);
+}
+/* END OF FONTS */ 
+
+
+/* Do not touch me, this took forever */
+#particles { 
+position: fixed;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+z-index: 0;
+background-color: #2C3035;
+background-image: url(foot.png);
+background-repeat: repeat-x; 
+background-position: bottom; 
+}
+
+
+#content {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+/* dont touch the height, it will adapt to the content */
+z-index: 1;
+}
+
+#headcont {
+	/*margin-left: auto; 
+	margin-right: auto; 
+	text-align: center; 
+	font-family: 'slimJoe';
+	color: #fff;
+	margin-top: 200px; 
+	vertical-align: middle; */
+}
+
+
+/* Form */
+.left { 
+	float: left; 
+}
+
+.right { 
+	float: right; 
+}
+
+.inline { 
+	display: inline-block;
+}
+
+/* Intro Information */
+
+
+#intro { 
+	text-align: center; 
+	color: white; 
+	margin-top: 2%;  
+	margin-bottom: 2%;
+}
+
+#intro h1 { 
+	font-size: 4em;
+	font-family: Roboto;  
+}
+
+#intro p { 
+	font-size: 0.5em; 
+	font-family: Roboto;
+	color: #F26821; 
+}
+
+body { 
+	margin: 0;
+}
+
+/* Form Styling */ 
+
+.small { 
+	width: 200px;
+}
+
+#formstuff { 
+	width: 600px;
+	margin-left: auto; 
+	margin-right: auto; 
+	color: white;
+	font-size: 1.7em; 
+
+}
+
+#formstuff label { 
+	font-family: Raleway; 
+}
+
+.form-group label { 
+	display: inline-block;
+	width:300px; 
+	text-align: left; 
+}
+
+.left { 
+	float: right; 
+}
+
+.right { 
+	float: left; 
+}
+
+#submit { 
+	width: 150px; 
+	margin-right: auto; 
+	margin-left: auto; 
+	margin-top: 2%;
+}
+
+#submitbtn { 
+	color: white;
+	border-radius: 25px; 
+	background-color: #F26821;
+	font-size: 20px;
+}
+
+
+#exitButton { 
+	color: white;
+	border-radius: 10px;
+	background-color: #F26821;
+	font-size: 30px; 
+}
+
+#leaderBtn { 
+	text-decoration: none; 
+	color: white;	
+	font-family: Raleway; 
+	font-size: 1em; 
+}
+
+
+/* GAME */ 
+
+
+#game { 
+	background-color: #2C3035;
+}
+.questionblock {
+	background-color: red; 
+	display: inline-block; 
+	width: 500px; 
+	height: 200px;
+	margin-right: auto; 
+	margin-left: -300px; 
+	background-color: #ccc;
+	opacity: 0.8; 
+	margin: 20px; 
+	border: 1px solid #ff0000; 
+	border-radius: 25px;
+	text-decoration: none; 
+	list-style: none; 
+}
+
+.questionblock {
+	text-align: center; 
+	vertical-align: center; 
+	color: black;
+	font-size: 2em;
+}
+
+.questionblock:hover { 
+	background-color: white;
+	border: 2px solid #fff;
+}
+ /* INSERT HOVER PSEUDOCLASS */
+
+#gameheader { 
+	color: white;
+	font-family: Raleway; 
+	margin-bottom: 10%;
+}
+
+#gameheader h1 { 
+	width: 50%;
+	display: inline-block;
+}
+
+#gameheader h2 {
+	width: 20%;
+	display: inline-block;
+	text-align: right; 
+}
+
+#qanda { 
+	margin-top: -150px; 
+}
+
+#question{ 
+	text-align: center; 
+	color: white; 
+	font-family: Raleway; 
+	font-size: 3em; 
+}
+
+#answers { 
+	margin-left: auto; 
+	margin-right: auto; 
+	width: 650px;
+	margin-top: 50px; 
+
+}
+
+#answers {
+	/*background-color: red; */ 
+	width: 90%;
+}
+
+#answers li {
+	display: inline-block;
+	width: 
+}
+
+/* MODAL TEST */
+
+
+.screenStyles { 
+	background-image:url(trans.png);
+	position: absolute;
+	left: 0; 
+	top: 0; 
+}
+
+
+.modalStyle { 
+	 visibility: hidden;
+     position: absolute;
+     left: 0px;
+     top: 100px;
+     width:100%;
+     height:100%;
+     text-align:center;
+     z-index: 1000;
+}
+
+.modalStylePause { 
+	 visibility: hidden;
+     position: absolute;
+     left: 0px;
+     top: 0px;
+     width:100%;
+     height:100%;
+     text-align:center;
+     z-index: 1000;
+}
+
+#correctModal { 
+	 width:800px;
+     margin: 100px auto;
+     background-color: #2C3035;
+     border:1px solid #000;
+     padding:15px;
+     text-align:center; 
+     border-radius: 25px; 
+     border-color: white; 
+	 border-style: solid;
+	 border-width: 10px;
+	 background-image:url(trans.png);
+}
+
+#correctModal h1 { 
+	color: green;
+	font-size: 4em; 
+	text-align: center; 
+	font-family: Raleway; 
+}
+
+#correctModal p { 
+	color: white;
+	font-size: 1em; 
+	font-family: RobotoThin; 
+}
+
+#correctModal ul { 
+	list-style: none; 
+}
+
+#correctModal li {
+	display: inline; 
+}
+
+#correctModal .normal { 
+	text-decoration: none; 
+	color: white; 
+}
+
+
+#congratsModal { 
+	 width:800px;
+     margin: 100px auto;
+     background-color: #2C3035;
+     border:1px solid #000;
+     padding:15px;
+     text-align:center; 
+     border-radius: 25px; 
+     border-color: white; 
+	 border-style: solid;
+	 border-width: 10px;
+	 background-image:url(trans.png);
+}
+
+#congratsModal h1 { 
+	color: green;
+	font-size: 4em; 
+	text-align: center; 
+	font-family: Raleway; 
+}
+
+#congratsModal p { 
+	color: white;
+	font-size: 1em; 
+	font-family: RobotoThin; 
+}
+
+
+#congratsModal ul { 
+	list-style: none; 
+}
+
+#congratsModal li {
+	display: inline; 
+}
+
+#congratsModal .normal { 
+	text-decoration: none; 
+	color: white; 
+}
+
+
+
+/* RULES MODAL SUNIT */ 
+
+#rulesModal { 
+	 width:1500px;
+	 height: 800px; 
+	 top: 500px;
+	 left:500px;
+     margin: 100px auto;
+     background-color: #2C3035;
+     border:1px solid #000;
+     padding:15px;
+     text-align:center; 
+     border-radius: 25px; 
+     border-color: white; 
+	 border-style: solid;
+	 border-width: 10px;
+	 background-image:url(trans.png);
+}
+
+#rulesModal h1 { 
+	color: green;
+	font-size: 4em; 
+	text-align: center; 
+	font-family: Raleway; 
+}
+
+#rulesModal p { 
+	color: white;
+	font-size: 2.5em; 
+	font-family: RobotoThin; 
+}
+
+
+#rulesModal ol {
+	color: white;
+	font-size: 2em;
+	font-family: Roboto;
+	text-align: left; 
+}
+
+#rulesModal li {
+	
+}
+
+#rulesModal .normal { 
+	text-decoration: none; 
+	color: white; 
+}
+
+/* END OF RULES MODAL */ 
+
+#incorrectModal { 
+	 width:800px;
+     margin: 100px auto;
+     background-color: #2C3035;
+     border:1px solid #000;
+     padding:15px;
+     text-align:center; 
+     border-radius: 25px; 
+     border-color: white; 
+	 border-style: solid;
+	 border-width: 10px;
+	 background-image:url(trans.png);
+}
+
+#incorrectModal h1 { 
+	color: red;
+	font-size: 4em; 
+	text-align: center; 
+	font-family: Raleway; 
+}
+
+#incorrectModal p { 
+	color: white;
+	font-size: 1em; 
+	font-family: RobotoThin; 
+}
+
+#timeModal { 
+	 width:800px;
+     margin: 100px auto;
+     background-color: #2C3035;
+     border:1px solid #000;
+     padding:15px;
+     text-align:center; 
+     border-radius: 25px; 
+     border-color: white; 
+	 border-style: solid;
+	 border-width: 10px;
+	 background-image:url(trans.png);
+}
+
+#timeModal h1 { 
+	color: red;
+	font-size: 4em; 
+	text-align: center; 
+	font-family: Raleway; 
+}
+
+#timeModal p { 
+	color: white;
+	font-size: 1em; 
+	font-family: RobotoThin; 
+}
+
+#pauseModal { 
+	 width:800px;
+     margin: 100px auto;
+     background-color: #2C3035;
+     border:1px solid #000;
+     padding:15px;
+     text-align:center; 
+     border-radius: 25px; 
+     border-color: white; 
+	 border-style: solid;
+	 border-width: 10px;
+	 background-image:url(trans.png);
+}
+
+#pauseModal h1 { 
+	color: white;
+	font-size: 4em; 
+	text-align: center; 
+	font-family: Raleway; 
+}
+
+#pauseModal p { 
+	color: white;
+	font-size: 1em; 
+	font-family: RobotoThin; 
+}
+
+
+
+#exitModal { 
+	 width:800px;
+     margin: 100px auto;
+     background-color: #2C3035;
+     border:1px solid #000;
+     padding:15px;
+     text-align:center; 
+     border-radius: 25px; 
+     border-color: white; 
+	 border-style: solid;
+	 border-width: 10px;
+	 background-image:url(trans.png);
+}
+
+#exitModal h1 { 
+	color: green;
+	font-size: 4em; 
+	text-align: center; 
+	font-family: Raleway; 
+}
+
+#exitModal p { 
+	color: white;
+	font-size: 1em; 
+	font-family: RobotoThin; 
+}
+
+/* MODALS*/ 
+
+	.modalStyles {
+		border-radius: 200px; 
+		border: 1px solid white; 
+		width: 600px; 
+		height: 600px; 
+	}
+
+
+	#overlay {
+     visibility: hidden;
+     position: absolute;
+     left: 0px;
+     top: 0px;
+     width:100%;
+     height:100%;
+     text-align:center;
+     z-index: 1000;
+	background-image:url(trans.png);
+
+}
+
+#correctTest { 
+	 width:450px;
+     margin: 100px auto;
+     background-color: #2C3035;
+     border:1px solid #000;
+     padding:15px;
+     text-align:center; 
+     border-radius: 25px; 
+}
+
+#correctTest h1 { 
+	color: green;
+	font-size: 5em; 
+	text-align: center; 
+}
+
+#correctTest p { 
+	color: white;
+	font-size: 2em; 
+}
+
+#overlayIncorrect {
+     visibility: hidden;
+     position: absolute;
+     left: 0px;
+     top: 0px;
+     width:100%;
+     height:100%;
+     text-align:center;
+     z-index: 1000;
+	background-image:url(trans.png);
+
+}
+
+#IncorrectTest { 
+	width:450px;
+     margin: 100px auto;
+     background-color: #2C3035;
+     border:1px solid #000;
+     padding:15px;
+     text-align:center;
+}
+
+#IncorrectTest h1 { 
+	color: red; 
+	font-size: 5em; 
+	text-align: center; 
+}
+
+#IncorrectTest p {
+	color: white;
+	font-size: 2em; 
+	text-align: center; 
+}
+
+
+#overlayDone { 
+	 visibility: hidden;
+     position: absolute;
+     left: 0px;
+     top: 0px;
+     width:100%;
+     height:100%;
+     text-align:center;
+     z-index: 1000;
+	 background-image:url(trans.png);
+
+}
+/* GAME DONE MODAL BOXES */
+
+#gameDoneModal { 
+	top: 45px; 
+}
+
+
+
+/* FOOTER */ 
+
+#footoptions li{ 
+	display: inline-block;
+	width: 30%;
+	color: white;
+	font-size: 2em; 
+}
+
+#footoptions { 
+	text-align: center; 
+	margin-top: 5%;
+	margin-bottom: 0%; 
+}
+
+/* Stars */
+.small { 
+	width: 25px;
+	height: 25px; 
+}
+
+#stars { 
+	display: inline;
+}
+
+.danger { 
+	color: red; 
+}
+
+
+
+
+
+/* LEADERBOARD */
+
+
+table { 
+	color: black;
+	width: 75%;
+	margin-top: 5%;
+	margin-left: auto; 
+	margin-right: auto; 
+	text-align: center;
+}
+
+#board td { 
+	border-color: white; 
+}
+
+.staticRow { 
+	font-size: 3em;
+}
+
+.dynRow {
+	background-color: red; 
+	border: 1px black;
+}
+.dynRow td { 
+	border-color: white; 
+	font-size: 1em; 
+	color: black; 
+	text-align: left; 
+	font-family: robotoBold; 
+}
+
+.dynRow td:not(:first-child) { 
+	color: red;
+	text-align: center; 
+}
+
+.dynRow td:first-child { 
+	background-image:url(watrhubReal.png);
+}
+
+.dynRow td:nth-child(2) {
+	/*background-color: #F26821; */
+  background: linear-gradient(180deg, #F26821, #c3531a); /* Standard syntax */
+	color: white; 
+}
+
+.dynRow td:nth-child(3) { 
+	
+	background: linear-gradient(180deg, #01B3E0, #0090b4); /* Standard syntax */
+	color: white;
+}
+
+.dynRow td:nth-child(1){ 
+	background-color: white;
+}
+
+.dynRow td:nth-child(4){ 
+	background-color: white;
+}
+
+
+#leaderheader h1 { 
+	color: white;
+	text-align: center; 
+	font-family: Roboto; 
+	/*background-color: red; */
+}
+
+#leaderheader p { 
+	color: white;
+	text-align: center; 
+	font-family: Roboto; 
+}
+
+
+
+
+table{
+	border-spacing: 0;
+	opacity: 0.8; 
+}
+
+
+
+
+/* make sure font is roboto */
+
+/* TEST */
+
+#testing {
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 10px; 
+    color: black; 
+    background-color: white; 
+    font-family: Raleway; 
+    font-size: 2em;
+}
+
+
+#testing td {
+    border-bottom: 1px solid black;
+   /* border-radius: 10px;*/
+   /* -moz-border-radius: 5px;*/
+    padding: 5px;
+    /*background-color: white; */
+}
+
+
+
+
+
+#title { 
+	color: #F26821; 
+	font-size: 2em; 
+	font-family: Roboto; 
+	 box-shadow: 10px 10px 5px #888888;
+}
+
+#title td {
+	background-color: white;
+}

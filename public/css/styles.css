@@ -1,0 +1,79 @@
+/* FONTS */
+@font-face {
+	font-family: Raleway;
+	src: url(fonts/Raleway-Bold.ttf);
+}
+
+@font-face {
+	font-family: RalewayMedium;
+	src: url(fonts/Raleway-Medium.ttf);
+}
+
+@font-face {
+	font-family: RalewayRegular;
+	src: url(fonts/Raleway-Regular.ttf);
+}
+
+
+/* SIGN UP PAGE */
+
+#index{ 
+	background-image: url(foot.png);
+	background-repeat: repeat-x;
+	background-color: #2C3035;
+}
+
+.small {
+	width: 300px;
+}
+
+#formstuff {
+	margin-left: auto; 
+	margin-right: auto;
+	width: 400px;
+}
+
+#formstuff label { 
+	color: white;
+}
+
+#formstuff input { 
+	margin-bottom: 20px; 
+}
+
+#intro { 
+	text-align: center;
+	color: white;
+}
+
+#intro h1 { 
+	font-size: 2em; 
+}
+
+#intro p {
+	font-size: 0.5em; 
+	background-image: url(foot.png);
+}
+
+
+#submit{ 
+	margin-left: auto; 
+	margin-right: auto; 
+	width: 10%;
+}
+
+
+/* QUIZ STUFF */
+
+#game { 
+	background-color: #2C3035;
+}
+.questionblock {
+	display: inline-block; 
+	width: 100px; 
+	height: 100px; 
+	background-colour: #ccc;
+	border: 1px solid #ff0000; 
+	text-decoration: none; 
+	list-style: none; 
+}
